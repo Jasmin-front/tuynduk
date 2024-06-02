@@ -8,11 +8,11 @@
     font-weight: 600;
     line-height: 21.86px;
     border-bottom: 1px solid #F4F4F4;
-    padding-top: 29px;
+
 }
 .headerLeft{
+    padding-top: 29px;
     display: flex;
-    justify-content: center;
     gap: 46px;
     padding-left: 40px;
 }

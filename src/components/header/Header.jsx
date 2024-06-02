@@ -1,9 +1,10 @@
 import {Link, useLocation} from "react-router-dom";
 import style from './header.module.css'
-
+// import images
+import language from '../../assets/header/language.svg'
+import login from '../../assets/header/login.svg'
 const Header = () => {
     const location = useLocation();
-
     return (
         <header className={style.headerBlock}>
             <ul className={style.headerLeft}>
@@ -30,16 +31,12 @@ const Header = () => {
             </ul>
             <ul className={style.headerRight}>
                 <li className={style.leftBlock}>
-                    {/*<Link to={'/language'} className={style.leftBlock}>*/}
-                    {/*    <img src="../../assets/header/language.svg" className={style.leftBlockImg} />*/}
-                    {/*    <div className={style.headerText}>Язык</div>*/}
-                    {/*</Link>*/}
-                    <img src="../../assets/header/language.svg" className={style.leftBlockImg} />
+                    <img src={language} className={style.leftBlockImg} alt={'language'}/>
                     <div className={style.headerText}>Язык</div>
                 </li>
                 <li>
                     <Link to={'/login'} className={style.leftBlock}>
-                        <img src="../../assets/header/login.svg" className={style.leftBlockImg} />
+                        <img src={login} className={style.leftBlockImg} alt='login'/>
                         <div className={style.headerTextLogin}>Войти</div>
                     </Link>
                 </li>
