@@ -9,7 +9,7 @@ const Header = () => {
         <header className={style.headerBlock}>
             <ul className={style.headerLeft}>
                 <li>
-                    <Link to={'/participants'} className={location.pathname=== '/participants' ? style.headerTextActive : style.headerText } >Участники</Link>
+                    <Link to={'/Participants'} className={location.pathname=== '/Participants' ? style.headerTextActive : style.headerText } >Участники</Link>
                     <div className={style.block}></div>
                 </li>
                 <li>

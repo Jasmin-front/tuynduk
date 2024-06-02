@@ -1,37 +1,43 @@
-.sidebarBlock{
-    height: 100vh;
+.sidebarBlock {
     width: 93px;
     border-right: 1px solid #F4F4F4;
 }
-.sidebarBlock a{
+
+.sidebarBlock a {
     display: flex;
+    text-decoration: none;
+    color: inherit;
 }
-.imagesSidebarTop{
+
+.imagesSidebarTop {
     margin-top: 30.31px;
     margin-bottom: 85px;
     display: flex;
     justify-content: center;
 }
+
 .imagesSidebarBottom img {
     margin-bottom: 38px;
 }
 
-.block{
-    display:  block;
+.block {
+    display: block;
     background: #1560BD;
     width: 5px;
     height: 24px;
     border-radius: 0 8px 8px 0;
     margin-right: 30.5px;
 }
-.notActiveLink{
+
+.notActiveLink {
     margin-left: 35px;
 }
-.notActiveLink .block{
+
+.notActiveLink .block {
     display: none;
     margin-left: 35px;
 }
 
-
-
-
+.activeLink {
+    color: blue;
+}
