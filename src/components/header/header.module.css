@@ -1,0 +1,51 @@
+
+.headerBlock {
+    display: flex;
+    gap: 336px;
+    height: 79px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21.86px;
+    border-bottom: 1px solid #F4F4F4;
+    padding-top: 29px;
+}
+.headerLeft{
+    display: flex;
+    justify-content: center;
+    gap: 46px;
+    padding-left: 40px;
+}
+.headerRight{
+    display: flex;
+    gap: 49.5px;
+    justify-content: center;
+    align-items: center;
+}
+.leftBlock{
+    display: flex;
+    gap: 16px;
+}
+.leftBlockImg{
+    width: 24px;
+    height: 24px;
+}
+.headerText{
+    color: #858C96;
+}
+
+.headerTextActive{
+    color: #1560BD;
+}
+.headerTextActive + .block{
+    display: block;
+    height: 6px;
+    width: 40px;
+    background: #1560BD;
+    border-radius: 4px 4px 0 0;
+    margin: 22px auto 0;
+}
+
+.headerTextLogin{
+    color: #1560BD;
+}
