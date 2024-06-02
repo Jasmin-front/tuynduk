@@ -9,6 +9,7 @@ import SecurityServersPage from "./pages/securityServers/SecurityServersPage.jsx
 import MonitoringPage from "./pages/monitoring/MonitoringPage.jsx";
 import LoginPage from "./pages/login/LoginPage.jsx";
 import Sidebar from "./components/sidebar/Sidebar.jsx";
+import Ref from "./inifinty/Ref.jsx";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
                     <Route path='/monitoring' element={<MonitoringPage/>}/>
                     <Route path='/login' element={<LoginPage/>}/>
                 </Route>
+                <Ref/>
             </Routes>
         </div>
     </>
