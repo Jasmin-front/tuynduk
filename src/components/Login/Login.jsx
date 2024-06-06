@@ -1,32 +1,46 @@
-import React, { useState } from 'react';
-import './LoginPage.css';
+import React, {useEffect} from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { asyncGetData } from "../../redux/addUsersSlice/addUsersSlice.js";
+import { useForm } from "react-hook-form";
 
-const LoginPage = ({ setIsAuthenticated }) => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+function Login({ setIsAuthenticated }) {
+    const navigate = useNavigate();
+    const {users} = useSelector((state) => state.user);
+    const { register, handleSubmit } = useForm();
+    const dispatch = useDispatch();
 
-    const handleLogin = () => {
-        setIsAuthenticated(true);
+    useEffect(() => {
+        dispatch(asyncGetData());
+        setIsAuthenticated(false)
+    }, []);
+    const handleLogin = (data) => {
+        const user = users.find(item => item.login === data.login && item.password === data.password);
+        if (user) {
+            setIsAuthenticated(true);
+            navigate('/');
+        } else {
+            console.log('Данные не верны');
+        }
     };
 
     return (
-        <div className="login-page">
+        <div>
             <h2>Вход</h2>
-            <input
-                type="text"
-                placeholder="Логин"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-            />
-            <input
-                type="password"
-                placeholder="Пароль"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-            />
-            <button onClick={handleLogin}>Войти</button>
+            <form onSubmit={handleSubmit(handleLogin)}>
+                <input
+                    {...register('login')}
+                    type="text"
+                />
+                <input
+                    {...register('password')}
+                    type="password"
+                />
+                <button type="submit">Login</button>
+            </form>
+            <p><Link to="/registration">Регистрация</Link></p>
         </div>
     );
-};
+}
 
-export default LoginPage;
+export default Login;

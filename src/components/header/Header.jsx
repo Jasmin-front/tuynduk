@@ -1,6 +1,5 @@
 import {Link, useLocation} from "react-router-dom";
 import style from './header.module.css'
-// import images
 import language from '../../assets/header/language.svg'
 import login from '../../assets/header/login.svg'
 const Header = () => {
@@ -37,7 +36,7 @@ const Header = () => {
                 <li>
                     <Link to={'/login'} className={style.leftBlock}>
                         <img src={login} className={style.leftBlockImg} alt='login'/>
-                        <div className={style.headerTextLogin}>Войти</div>
+                        <div className={style.headerTextLogin}>Выйти</div>
                     </Link>
                 </li>
             </ul>

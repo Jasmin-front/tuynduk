@@ -1,0 +1,30 @@
+.registration-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.registration-page h2 {
+    margin-bottom: 20px;
+}
+
+.registration-page input {
+    margin: 10px 0;
+    padding: 10px;
+    width: 200px;
+}
+
+.registration-page button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.registration-page button:hover {
+    background-color: #0056b3;
+}
