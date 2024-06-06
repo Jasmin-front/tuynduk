@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Routes, useNavigate } from "react-router-dom";
+import {Navigate, Route, Routes, useNavigate} from "react-router-dom";
 import Participants from "./pages/Participants/Participants.jsx";
 import SubsystemsPage from "./pages/subsystems/SubsystemsPage.jsx";
 import Layout from "./components/layout/Layout.jsx";
@@ -12,11 +12,12 @@ import Registration from "./components/Registion/Registrion.jsx";
 import Sidebar from "./components/sidebar/Sidebar.jsx";
 
 function App() {
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(localStorage.getItem('login') ?? false);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const navigate = useNavigate();
 
     const handleLogout = () => {
+        localStorage.setItem('login',false)
         setIsAuthenticated(false);
         setIsSidebarOpen(false);
         navigate('/login');
@@ -44,7 +45,7 @@ console.log(isAuthenticated)
                         </Route>
                     </>
                 ) : (
-                    <Route path='*' element={<Login setIsAuthenticated={setIsAuthenticated} />} />
+                   <Route path={'*'} element={ <Navigate to={'/login'}/>}/>
                 )}
             </Routes>
         </div>

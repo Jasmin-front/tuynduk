@@ -1,29 +1,31 @@
 import React, {useEffect} from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import {Link, useLocation, useNavigate} from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { asyncGetData } from "../../redux/addUsersSlice/addUsersSlice.js";
 import { useForm } from "react-hook-form";
 
 function Login({ setIsAuthenticated }) {
     const navigate = useNavigate();
+    const location = useLocation()
     const {users} = useSelector((state) => state.user);
     const { register, handleSubmit } = useForm();
     const dispatch = useDispatch();
-
     useEffect(() => {
         dispatch(asyncGetData());
-        setIsAuthenticated(false)
+       if(location.pathname === '/login') setIsAuthenticated(false)
     }, []);
+
     const handleLogin = (data) => {
         const user = users.find(item => item.login === data.login && item.password === data.password);
         if (user) {
             setIsAuthenticated(true);
+            localStorage.setItem('login',true)
+
             navigate('/');
         } else {
             console.log('Данные не верны');
         }
     };
-
     return (
         <div>
             <h2>Вход</h2>

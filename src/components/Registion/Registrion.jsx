@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import {addUsersAsyncData} from "../../redux/addUsersSlice/addUsersSlice.js";
+import addUsersSlice from "../../redux/addUsersSlice/addUsersSlice.js";
 
 const Registration = ({ setIsAuthenticated }) => {
     const dispatch = useDispatch();
@@ -10,7 +10,7 @@ const Registration = ({ setIsAuthenticated }) => {
 
     const handleRegistration = (data) => {
         console.log(data)
-        dispatch(addUsersAsyncData(data));
+        dispatch(addUsersSlice(data));
         reset();
         setIsAuthenticated(true);
     };
