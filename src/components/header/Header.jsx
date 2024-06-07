@@ -8,7 +8,7 @@ const Header = () => {
         <header className={style.headerBlock}>
             <ul className={style.headerLeft}>
                 <li>
-                    <Link to={'/Participants'} className={location.pathname=== '/Participants' ? style.headerTextActive : style.headerText } >Участники</Link>
+                    <Link to={'/participants'} className={location.pathname=== '/participants' ? style.headerTextActive : style.headerText } >Участники</Link>
                     <div className={style.block}></div>
                 </li>
                 <li>
@@ -24,7 +24,7 @@ const Header = () => {
                     <div className={style.block}></div>
                 </li>
                 <li>
-                    <Link to={'/monitoring'} className={location.pathname=== '/monitoring' ? style.headerTextActive : style.headerText }>Мониторинг</Link>
+                    <Link to={'/Monitoring'} className={location.pathname=== '/Monitoring' ? style.headerTextActive : style.headerText }>Мониторинг</Link>
                     <div className={style.block}></div>
                 </li>
             </ul>

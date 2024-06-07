@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Participants.css';
+import './Main.css';
 import one from '../../assets/Particpants/one.svg';
 import bigOne from '../../assets/Particpants/big-one.svg';
 import two from '../../assets/Particpants/two.svg';
@@ -9,7 +9,7 @@ import threeBig from '../../assets/Particpants/three-big.svg';
 import four from '../../assets/Particpants/four.svg';
 import fourBig from '../../assets/Particpants/four-big.svg';
 
-const Participants = () => {
+const Main = () => {
     const [addService, setAddService] = useState([]);
     const [upDateService, setUpDateService] = useState([]);
 
@@ -232,4 +232,4 @@ const Participants = () => {
     );
 };
 
-export default Participants;
+export default Main;

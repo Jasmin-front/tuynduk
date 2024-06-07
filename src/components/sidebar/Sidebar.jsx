@@ -23,9 +23,9 @@ const Sidebar = () => {
                 </Link>
             </div>
             <div className={style.imagesSidebarBottom}>
-                <Link to={'/Participants'} className={location.pathname === '/Participants' ? style.activeLink : style.notActiveLink}>
+                <Link to={'/Main'} className={location.pathname === '/participants' ? style.activeLink : style.notActiveLink}>
                     <div className={style.block}></div>
-                    <img src={location.pathname === '/Participants' ? participantsBlue : participants} alt='participants' />
+                    <img src={location.pathname === '/participants' ? participantsBlue : participants} alt='participants' />
                 </Link>
                 <Link to={'/subsystems'} className={location.pathname === '/subsystems' ? style.activeLink : style.notActiveLink}>
                     <div className={style.block}></div>
@@ -39,9 +39,9 @@ const Sidebar = () => {
                     <div className={style.block}></div>
                     <img src={location.pathname === '/security_servers' ? security_serversBlue : security_servers} alt="security_servers" />
                 </Link>
-                <Link to={'/monitoring'} className={location.pathname === '/monitoring' ? style.activeLink : style.notActiveLink}>
+                <Link to={'/Monitoring'} className={location.pathname === '/Monitoring' ? style.activeLink : style.notActiveLink}>
                     <div className={style.block}></div>
-                    <img src={location.pathname === '/monitoring' ? monitoringBlue : monitoring} alt="monitoring" />
+                    <img src={location.pathname === '/Monitoring' ? monitoringBlue : monitoring} alt="monitoring" />
                 </Link>
             </div>
         </div>

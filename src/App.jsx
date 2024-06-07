@@ -1,15 +1,16 @@
 import './App.css';
 import {Navigate, Route, Routes, useNavigate} from "react-router-dom";
-import Participants from "./pages/Participants/Participants.jsx";
+import Main from "./pages/Main/Main.jsx";
 import SubsystemsPage from "./pages/subsystems/SubsystemsPage.jsx";
 import Layout from "./components/layout/Layout.jsx";
 import ServicesPage from "./pages/services/ServicesPage.jsx";
 import SecurityServersPage from "./pages/securityServers/SecurityServersPage.jsx";
-import MonitoringPage from "./pages/monitoring/MonitoringPage.jsx";
+import Monitoring from "./pages/Monitoring/Monitoring.jsx";
 import { useState } from 'react';
 import Login from "./components/Login/Login.jsx";
 import Registration from "./components/Registion/Registrion.jsx";
 import Sidebar from "./components/sidebar/Sidebar.jsx";
+import NewParticipants from "./pages/NewParticipants/NewParticipants.jsx";
 
 function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(localStorage.getItem('login') ?? false);
@@ -36,12 +37,12 @@ console.log(isAuthenticated)
                 {isAuthenticated ? (
                     <>
                         <Route path='/' element={<Layout />}>
-                            <Route index element={<h1 > FIX_ME</h1>} />
-                            <Route path='/participants' element={<Participants />} />
+                            <Route index element={<Main/>} />
+                            <Route path='/participants' element={<NewParticipants />} />
                             <Route path='/subsystems' element={<SubsystemsPage />} />
                             <Route path='/services' element={<ServicesPage />} />
                             <Route path='/security_servers' element={<SecurityServersPage />} />
-                            <Route path='/monitoring' element={<MonitoringPage />} />
+                            <Route path='/monitoring' element={<Monitoring />} />
                         </Route>
                     </>
                 ) : (
