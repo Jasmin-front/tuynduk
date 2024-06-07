@@ -8,7 +8,7 @@ function Login({ setIsAuthenticated }) {
     const navigate = useNavigate();
     const location = useLocation()
     const {users} = useSelector((state) => state.user);
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, formState:{errors} } = useForm();
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(asyncGetData());
@@ -16,11 +16,11 @@ function Login({ setIsAuthenticated }) {
     }, []);
 
     const handleLogin = (data) => {
+        console.log(data)
         const user = users.find(item => item.login === data.login && item.password === data.password);
         if (user) {
             setIsAuthenticated(true);
             localStorage.setItem('login',true)
-
             navigate('/');
         } else {
             console.log('Данные не верны');
@@ -31,13 +31,15 @@ function Login({ setIsAuthenticated }) {
             <h2>Вход</h2>
             <form onSubmit={handleSubmit(handleLogin)}>
                 <input
-                    {...register('login')}
+                    {...register('login', {required:true})}
                     type="text"
                 />
+                {errors.login && <p className='error-message'>*Oбьязательное поле</p>}
                 <input
-                    {...register('password')}
+                    {...register('password',{required:true})}
                     type="password"
                 />
+                {errors.password && <p className='error-message'>*Oбьязательное поле</p>}
                 <button type="submit">Login</button>
             </form>
             <p><Link to="/registration">Регистрация</Link></p>

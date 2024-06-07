@@ -7,7 +7,7 @@ import './Registrion.css'
 
 const Registration = ({ setIsAuthenticated }) => {
     const dispatch = useDispatch();
-    const { register, reset, handleSubmit } = useForm();
+    const { register, reset, handleSubmit, formState:{errors} } = useForm();
 
     const handleRegistration = (data) => {
         console.log(data)
@@ -23,13 +23,16 @@ const Registration = ({ setIsAuthenticated }) => {
                 <input
                     type="text"
                     placeholder='Логин'
-                    {...register('login')}
+                    {...register('login', {required:'*Обязательное поле'})}
+                    // ref={register({ required: "*Обязательное поле", minLength: { value: 5, message: "*Не менее 5 символов" } })}
                 />
+                {errors.login && <p className='error-message'>{errors.login.message}</p>}
                 <input
                     type="password"
                     placeholder='пароль'
-                    {...register('password')}
+                    {...register('password' , {required:'*Обязательное поле',  minLength:{value:5, message:'*Не менее 5 символов'}})}
                 />
+                {errors.password && <p className='error-message'>{errors.password.message}</p>}
                 <button type="submit">Register</button>
             </form>
             <p><Link to="/login">Вход</Link></p>
