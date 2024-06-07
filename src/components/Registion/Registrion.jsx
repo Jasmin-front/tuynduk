@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import addUsersSlice from "../../redux/addUsersSlice/addUsersSlice.js";
+import './Registrion.css'
 
 const Registration = ({ setIsAuthenticated }) => {
     const dispatch = useDispatch();
@@ -16,7 +17,7 @@ const Registration = ({ setIsAuthenticated }) => {
     };
 
     return (
-        <div>
+        <div className='registrationPage'>
             <h2>Регистрация</h2>
             <form onSubmit={handleSubmit(handleRegistration)}>
                 <input

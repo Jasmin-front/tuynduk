@@ -3,7 +3,7 @@ import {Link, useLocation, useNavigate} from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { asyncGetData } from "../../redux/addUsersSlice/addUsersSlice.js";
 import { useForm } from "react-hook-form";
-
+import './Login.css'
 function Login({ setIsAuthenticated }) {
     const navigate = useNavigate();
     const location = useLocation()
@@ -27,7 +27,7 @@ function Login({ setIsAuthenticated }) {
         }
     };
     return (
-        <div>
+        <div className='loginPage'>
             <h2>Вход</h2>
             <form onSubmit={handleSubmit(handleLogin)}>
                 <input
