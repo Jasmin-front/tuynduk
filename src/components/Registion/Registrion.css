@@ -1,0 +1,33 @@
+
+.registrationPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+.registrationPage h2{
+    margin-bottom: 20px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40.98px;
+    color: #041326;
+    text-align: center;
+}
+.registrationPage input{
+    display: block;
+    width: 312px;
+    height: 42px;
+    padding-left: 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.registrationPage button{
+    width: 312px;
+    height: 42px;
+    color: white;
+    background:#1560BD;
+    border-radius: 8px;
+}

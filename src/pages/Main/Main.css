@@ -1,0 +1,220 @@
+@import "../../font/manrope/stylesheet.css";
+.card_number_main{
+    padding: 40px 0 0 128px;
+;
+}
+.card-main{
+    display: flex;
+    flex-direction: column;
+}
+.card_main_title{
+    font-family: sans-serif;
+}
+.card_container{
+    margin-top: 30px;
+    display: flex;
+    gap: 24px;
+}
+.card{
+    width: 299px;
+    height: 187px;
+    border-radius: 12px ;
+    display: flex;
+    padding: 20px 0 20px 20px;
+    justify-content: space-between;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(5, 4, 4, 0.1);
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slideIn 0.5s forwards;
+}
+.card:hover{
+    .diagnostic{
+        bottom: 10px;
+        right: 10px;
+    }
+
+}.card:hover{
+    .min_img_card_number{
+        transform: scale(1.1);
+    }
+
+}
+.card_info{
+    display: flex;
+    flex-direction: column;
+    height: 147px;
+    align-items: center;
+    background-color: red;
+}
+.min_img_card_number{
+    align-self: start;
+    position: absolute;
+    transition: 0.3s;
+
+}
+.card_text{
+    align-self: start;
+    font-family: Manrope;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19.12px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+    margin-top: 130px;
+    position: absolute;
+
+}
+.diagnostic{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transition: 0.5s;
+}
+.card_number{
+    position: absolute;
+    margin-top: 45px;
+    margin-left: 65px;
+    font-family: Manrope;
+    font-size: 60px;
+    font-weight: 500;
+    margin-right: -40px;
+
+    line-height: 81px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+}
+.diagnostic img{
+    max-width: 100%;
+    height: auto;
+}
+#one{
+    background: linear-gradient(90deg, #63BEEC 0%, #BBEBFF 100%);
+}
+#two{
+    background: linear-gradient(90deg, #6A46E7 5.35%, #AD97FB 100%);
+}
+#three{
+    background: linear-gradient(90deg, #5086F4 0%, #84ABF4 96.82%);
+}
+#four{
+    background: linear-gradient(90deg, #45D5AC 0%, #B1FAE7 95.99%);
+}
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.card:nth-child(4) {
+    animation-delay: 0.8s;
+}
+.add_sevice{
+    margin-top: 40px ;
+}
+.add_sevice_title{
+    font-family: Manrope;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 30.05px;
+    text-align: left;
+    color: rgba(4, 19, 38, 1);
+
+}
+.service_info{
+    margin-top: 24px;
+    padding: 30px 24px;
+    display: flex;
+    box-shadow: -1px 2px 20px 3px rgba(68, 121, 186, 0.05);
+}
+.service_info_title{
+    background: rgba(230, 243, 255, 1);
+    height: 46px;
+    padding: 12px 20px 12px 20px;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Manrope;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21.86px;
+    text-align: left;
+    color: rgba(54, 66, 81, 1);
+
+
+
+
+}
+.name{
+    width:584px;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgb(220, 212, 212);
+    border-right: 1px solid rgb(220, 212, 212);
+    font-family: Manrope;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21.86px;
+    text-align: left;
+    color: rgba(54, 66, 81, 1);
+
+
+}
+.subsystems{
+    width: 372px;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgb(220, 212, 212);
+    font-family: Manrope;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21.86px;
+    text-align: left;
+    color: rgba(54, 66, 81, 1);
+
+
+
+
+}
+.registrion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 261px;
+    height: 46px;
+    border-bottom: 1px solid rgb(220, 212, 212);
+    border-left: 1px solid rgb(220, 212, 212);
+    font-family: Manrope;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21.86px;
+    text-align: left;
+    color: rgba(54, 66, 81, 1);
+}
+.update_service{
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
