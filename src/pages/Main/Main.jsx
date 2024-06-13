@@ -8,6 +8,7 @@ import three from '../../assets/Particpants/three.svg';
 import threeBig from '../../assets/Particpants/three-big.svg';
 import four from '../../assets/Particpants/four.svg';
 import fourBig from '../../assets/Particpants/four-big.svg';
+import {Link} from "react-router-dom";
 
 const Main = () => {
     const [addService, setAddService] = useState([]);
@@ -103,46 +104,50 @@ const Main = () => {
                 <div className="card-main">
                     <h2 className='card_main_title'>Информационная система “Каталог”</h2>
                     <div className="card_container">
-                        <div className="card" id='one'>
+                        <Link to={'/participants'} className="card" id='one'>
                             <div className='card_info'>
-                                <img className='min_img_card_number' src={one} alt=""/>
                                 <h2 className='card_number'>{countOne}</h2>
                                 <p className='card_text'>Участники</p>
                             </div>
+                            <img className='min_img_card_number' src={one} alt=""/>
+
                             <div className='diagnostic'>
                                 <img src={bigOne} alt=""/>
                             </div>
-                        </div>
-                        <div className="card" id='two'>
+                        </Link>
+                        <Link to={'/subsystems'} className="card" id='two'>
                             <div className='card_info'>
-                                <img className='min_img_card_number' src={two} alt=""/>
                                 <h2 className='card_number'>{countTwo}</h2>
                                 <p className='card_text'>Cистемы</p>
                             </div>
+                            <img className='min_img_card_number' src={two} alt=""/>
+
                             <div className='diagnostic'>
                                 <img src={bigTwo} alt=""/>
                             </div>
-                        </div>
-                        <div className="card" id='three'>
+                        </Link>
+                        <Link to={'/services'} className="card" id='three'>
                             <div className='card_info'>
-                                <img className='min_img_card_number' src={three} alt=""/>
                                 <h2 className='card_number'>{countThree}</h2>
                                 <p className='card_text'>Серверы безопасности</p>
                             </div>
+                            <img className='min_img_card_number' src={three} alt=""/>
+
                             <div className='diagnostic'>
                                 <img src={threeBig} alt=""/>
                             </div>
-                        </div>
-                        <div className="card" id='four'>
+                        </Link>
+                        <Link to={'/security_servers'} className="card" id='four'>
                             <div className='card_info'>
-                                <img className='min_img_card_number' src={four} alt=""/>
                                 <h2 className='card_number'>{countFour}</h2>
                                 <p className='card_text'>Подсистемы</p>
                             </div>
+                            <img className='min_img_card_number' src={four} alt=""/>
+
                             <div className='diagnostic'>
                                 <img src={fourBig} alt=""/>
                             </div>
-                        </div>
+                        </Link>
                     </div>
                 </div>
                 <div className="add_sevice">

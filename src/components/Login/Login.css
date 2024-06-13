@@ -1,13 +1,24 @@
+.loginPage_main {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
 
-.loginPage{
+.loginPage {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
     width: 100%;
+    max-width: 50%;
+    padding-left: 200px;
+    padding-right: 0;
+
+    box-sizing: border-box;
 }
-.loginPage h2{
+
+.loginPage h2 {
     margin-bottom: 20px;
     font-family: 'Manrope', sans-serif;
     font-size: 30px;
@@ -16,18 +27,140 @@
     color: #041326;
     text-align: center;
 }
-.loginPage input{
+
+.loginPage input {
     display: block;
-    width: 312px;
+    width: 100%;
     height: 42px;
-    padding-left: 20px;
+    padding-left: 40px;
     border-radius: 8px;
     margin-bottom: 10px;
 }
-.loginPage button{
-    width: 312px;
+
+.login_btn {
+    width: 100%;
     height: 42px;
     color: white;
-    background:#1560BD;
+    background: #1560BD;
     border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s ease;
+}
+
+.login_btn:hover {
+    background: #729fe7;
+}
+
+.login_container_images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.tynduk_images {
+    max-width: 200px;
+}
+
+.login_container {
+    box-shadow: #959da533 0 8px 24px;
+    height: auto;
+    width: 80%;
+    max-width: 342px;
+    border-radius: 20px;
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.exit {
+    margin-left: 0;
+    text-align: center;
+}
+
+.tynduk_from {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.tynduk_from_bloack {
+    position: relative;
+}
+
+.input_images {
+    position: absolute;
+    width: 25px;
+    top: 7px;
+    left: 7px;
+}
+
+.social {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.imgSoch {
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.imgSoch:hover {
+    transform: scale(1.4);
+}
+
+.languach_container_btns {
+    display: flex;
+    gap: 7px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.languach_btns {
+    width: 50px;
+    height: 40px;
+    border: none;
+    font-family: sans-serif;
+    background: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    color: #72708D;
+    transition: 0.3s;
+}
+
+.languach_btns:hover {
+    color: #1560BD;
+}
+
+.languach_btns.selected {
+    background: #D9E5F5;
+    color: #1560BD;
+    border-radius: 13px;
+}
+
+@media (max-width: 768px) {
+    .loginPage_main {
+        flex-direction: column;
+    }
+
+    .loginPage {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .login_container {
+        width: 100%;
+    }
 }

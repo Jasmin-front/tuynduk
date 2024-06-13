@@ -1,6 +1,7 @@
 @import "../../font/manrope/stylesheet.css";
 .card_number_main{
-    padding: 40px 0 0 40px ;
+    padding: 40px 0 0 128px;
+;
 }
 .card-main{
     display: flex;
@@ -27,14 +28,30 @@
     transform: translateX(100%);
     animation: slideIn 0.5s forwards;
 }
+.card:hover{
+    .diagnostic{
+        bottom: 10px;
+        right: 10px;
+    }
+
+}.card:hover{
+    .min_img_card_number{
+        transform: scale(1.1);
+    }
+
+}
 .card_info{
     display: flex;
     flex-direction: column;
     height: 147px;
     align-items: center;
+    background-color: red;
 }
 .min_img_card_number{
     align-self: start;
+    position: absolute;
+    transition: 0.3s;
+
 }
 .card_text{
     align-self: start;
@@ -54,7 +71,10 @@
     align-items: center;
     justify-content: center;
     align-self: flex-end;
-
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transition: 0.5s;
 }
 .card_number{
     position: absolute;
@@ -63,6 +83,8 @@
     font-family: Manrope;
     font-size: 60px;
     font-weight: 500;
+    margin-right: -40px;
+
     line-height: 81px;
     text-align: left;
     color: rgba(255, 255, 255, 1);

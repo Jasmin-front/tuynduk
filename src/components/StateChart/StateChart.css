@@ -1,0 +1,12 @@
+@import "../../font/manrope/stylesheet.css";
+
+.state_chart_container_title{
+    margin-top: 40px;
+    font-family: Manrope;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 40.98px;
+    text-align: left;
+    color: rgba(4, 19, 38, 1);
+
+}

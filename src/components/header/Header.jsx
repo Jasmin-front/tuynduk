@@ -7,23 +7,23 @@ const Header = () => {
     return (
         <header className={style.headerBlock}>
             <ul className={style.headerLeft}>
-                <li>
-                    <Link to={'/participants'} className={location.pathname=== '/participants' ? style.headerTextActive : style.headerText } >Участники</Link>
+                <li className='header_text'>
+                    <Link to={'/participants'} className={ location.pathname=== '/participants' ? style.headerTextActive : style.headerText } >Участники</Link>
                     <div className={style.block}></div>
                 </li>
-                <li>
+                <li className='header_text'>
                     <Link to={'/subsystems'} className={location.pathname==='/subsystems'  ? style.headerTextActive : style.headerText } >Подсистемы</Link>
                     <div className={style.block}></div>
-                </li>
-                <li>
+                </li >
+                <li className='header_text'>
                     <Link to={'/services'} className={location.pathname=== '/services' ? style.headerTextActive : style.headerText }>Сервисы</Link>
                     <div className={style.block}></div>
                 </li>
-                <li>
+                <li className='header_text'>
                     <Link to={'/security_servers'} className={location.pathname=== '/security_servers'? style.headerTextActive : style.headerText }>Серверы безопасности</Link>
                     <div className={style.block}></div>
                 </li>
-                <li>
+                <li className='header_text'>
                     <Link to={'/Monitoring'} className={location.pathname=== '/Monitoring' ? style.headerTextActive : style.headerText }>Мониторинг</Link>
                     <div className={style.block}></div>
                 </li>

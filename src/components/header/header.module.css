@@ -1,15 +1,19 @@
 
 .headerBlock {
     display: flex;
-    gap: 336px;
+    gap: 300px;
     height: 79px;
     font-family: 'Manrope', sans-serif;
     font-size: 16px;
     font-weight: 600;
     line-height: 21.86px;
-    border-bottom: 1px solid #F4F4F4;
+    box-shadow: 12px 0 12px 0 #00000014;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 102px;
 
 }
+
 .headerLeft{
     padding-top: 29px;
     display: flex;
@@ -18,13 +22,12 @@
 }
 .headerRight{
     display: flex;
-    gap: 49.5px;
+    gap: 82px;
     justify-content: center;
     align-items: center;
 }
 .leftBlock{
     display: flex;
-    gap: 16px;
 }
 .leftBlockImg{
     width: 24px;
@@ -32,6 +35,9 @@
 }
 .headerText{
     color: #858C96;
+}
+.headerText:hover{
+    color: #1560BD;
 }
 
 .headerTextActive{

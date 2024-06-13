@@ -1,0 +1,49 @@
+@import "../../font/manrope/stylesheet.css";
+
+.monitoring-container{
+    padding: 40px 0 0 128px;
+
+}
+.monitoring-container_titile{
+    font-family: Manrope;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40.98px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+.monitoring-container_titile_span{
+    font-family: Manrope;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 30.05px;
+    text-align: left;
+    margin-top: 30px;
+    color: rgba(4, 19, 38, 1);
+
+}
+.monitoring-number{
+    margin-top: 50px;
+    font-family: Manrope;
+    font-size: 100px;
+    font-weight: 700;
+    line-height: 136.6px;
+    text-align: left;
+    color: rgba(21, 96, 189, 1);
+
+}
+.monitoring-number_text{
+    font-family: Manrope;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32.78px;
+    text-align: left;
+    color: rgba(4, 19, 38, 1);
+    margin-top: 12px;
+}
+.monitoring-combo-chart{
+    display: flex;
+}
+.monitoring-pie-chart{
+
+}

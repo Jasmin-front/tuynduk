@@ -1,6 +1,9 @@
 .sidebarBlock {
     width: 93px;
+    height: 100vh;
     border-right: 1px solid #F4F4F4;
+    box-shadow: #00000014 0 4px 12px;
+    position: fixed;
 }
 
 .sidebarBlock a {

@@ -1,0 +1,99 @@
+.pie-chart-container {
+    width: 634px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: #959da533 0 8px 24px;
+    height: 572px;
+    margin-top: 20px;
+}
+
+.buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.year-button {
+    background-color: gray;
+    color: white;
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.year-button.active {
+    background-color: blue;
+}
+
+.year-button:hover {
+    background-color: darkgray;
+}
+
+.chart-wrapper {
+    width: 460px;
+    height: 465px;
+    position: relative;
+}
+
+.chart_container_min {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    height: 100px;
+}
+
+.chart_container_title {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgba(4, 19, 38, 1);
+    font-family: sans-serif;
+}
+
+.chart_container_btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.chart_container_btns_text {
+    margin-right: 10px;
+    font-size: 16px;
+    color: rgba(4, 19, 38, 1);
+    margin-top: 100px;
+
+}
+
+.chart_container_min_btns {
+    margin-top: 100px;
+    border: 1px solid #007BFF;
+    width: 50px;
+    height: 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.chart_container_min_btns.active {
+    background-color: #007BFF;
+    color: #fff;
+    border-color: #007BFF;
+}
+.chart_container_text{
+    font-weight: bold;
+    font-size: 18px;
+    opacity: 0.6;
+}

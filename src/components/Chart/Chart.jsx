@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
+import './Chart.css'
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler } from 'chart.js';
 
-// Register necessary components
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler);
 
 const Chart = () => {
@@ -17,15 +17,6 @@ const Chart = () => {
         2023: true,
         2024: true,
     });
-
-    useEffect(() => {
-        return () => {
-            // Clean up the chart instance
-            if (chartRef.current) {
-                chartRef.current.chartInstance.destroy();
-            }
-        };
-    }, []);
 
     const datasets = {
         2018: {
@@ -96,26 +87,45 @@ const Chart = () => {
     const options = {
         responsive: true,
         plugins: {
-            // Other plugins...
-            plugins: {
-                // Other plugins...
-                drawText: {
-                    afterDatasetsDraw: (chart) => {
-                        const ctx = chart.ctx;
-                        chart.data.datasets.forEach((dataset, i) => {
-                            const meta = chart.getDatasetMeta(i);
-                            if (!meta.hidden) {
-                                meta.data.forEach((element, index) => {
-
-                                    const data = dataset.data[index];
-                                    const x = element.x;
-                                    const y = element.y - 10;
-                                    ctx.fillStyle = '#000000'; // Color of the text
-                                    ctx.fillText(data.toLocaleString(), x, y);
-                                });
-                            }
-                        });
+            tooltip: {
+                mode: 'index',
+                intersect: false,
+                callbacks: {
+                    label: (context) => {
+                        let label = context.dataset.label || '';
+                        if (label) {
+                            label += ': ';
+                        }
+                        label += context.raw.toLocaleString();
+                        return label;
                     }
+                },
+                bodyFont: {
+                    size: 16
+                },
+                footerFont: {
+                    size: 16 // Make tooltip footer bigger
+                },
+            },
+            legend: {
+                display: true,
+                position: 'top',
+            },
+            drawText: {
+                afterDatasetsDraw: (chart) => {
+                    const ctx = chart.ctx;
+                    chart.data.datasets.forEach((dataset, i) => {
+                        const meta = chart.getDatasetMeta(i);
+                        if (!meta.hidden) {
+                            meta.data.forEach((element, index) => {
+                                const data = dataset.data[index];
+                                const x = element.x;
+                                const y = element.y - 10;
+                                ctx.fillStyle = '#000000'; // Color of the text
+                                ctx.fillText(data.toLocaleString(), x, y);
+                            });
+                        }
+                    });
                 }
             }
         },
@@ -124,14 +134,27 @@ const Chart = () => {
                 type: 'category',
                 labels: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
                 grid: {
-                    display: false,// Hide vertical grid lines
-
+                    display: false, // Hide vertical grid lines
+                },
+                ticks: {
+                    callback: function(value) {
+                        const labels = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
+                        return labels[value];
+                    },
+                    font: {
+                        size: 14 // Default font size for month labels
+                    },
                 }
             },
             y: {
                 beginAtZero: true,
                 grid: {
-                    display: true // Show horizontal grid lines
+                    display: true
+                },
+                ticks: {
+                    callback: function(value) {
+                        return value.toLocaleString();
+                    }
                 }
             }
         },
@@ -143,16 +166,38 @@ const Chart = () => {
         elements: {
             point: {
                 radius: 5,
-                hoverRadius: 7
+                hoverRadius: 7,
+                pointStyle: 'circle'
             },
             line: {
                 borderWidth: 2,
                 tension: 0.4
             }
+        },
+        hover: {
+            mode: 'index',
+            intersect: false,
+            onHover: (event, activeElements) => {
+                const chart = chartRef.current.chartInstance;
+                if (activeElements.length > 0) {
+                    chart.tooltip.setActiveElements(activeElements, { x: event.offsetX, y: event.offsetY });
+                    chart.draw();
+                } else {
+                    chart.tooltip.setActiveElements([], {});
+                    chart.draw();
+                }
+            }
         }
     };
 
-    // Toggle visibility of datasets
+    useEffect(() => {
+        return () => {
+            if (chartRef.current) {
+                chartRef.current.chartInstance.destroy();
+            }
+        };
+    }, []);
+
     const toggleYearVisibility = (year) => {
         setVisibleYears(prevState => ({
             ...prevState,
@@ -176,14 +221,27 @@ const Chart = () => {
     };
 
     return (
-        <div>
-            <div>
-                <button onClick={toggleAllVisibility}>Все</button>
-                {Object.keys(datasets).map(year => (
-                    <button key={year} onClick={() => toggleYearVisibility(year)}>
-                        {year}
+        <div className='chart_container'>
+            <div className='chart_container_min'>
+                <h2 className='chart_container_title'>Количество запросов по годам</h2>
+                <div className='chart_container_btns'>
+                    <p className='chart_container_btns_text'>Выберите год:</p>
+                    <button
+                        className={`chart_container_min_btns ${visibleYears.all ? 'active' : ''}`}
+                        onClick={toggleAllVisibility}
+                    >
+                        Все
                     </button>
-                ))}
+                    {Object.keys(datasets).map(year => (
+                        <button
+                            className={`chart_container_min_btns ${visibleYears[year] ? 'active' : ''}`}
+                            key={year}
+                            onClick={() => toggleYearVisibility(year)}
+                        >
+                            {year}
+                        </button>
+                    ))}
+                </div>
             </div>
             <Line
                 ref={chartRef}

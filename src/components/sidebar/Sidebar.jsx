@@ -23,7 +23,7 @@ const Sidebar = () => {
                 </Link>
             </div>
             <div className={style.imagesSidebarBottom}>
-                <Link to={'/Main'} className={location.pathname === '/participants' ? style.activeLink : style.notActiveLink}>
+                <Link to={'/participantse'} className={location.pathname === '/participants' ? style.activeLink : style.notActiveLink}>
                     <div className={style.block}></div>
                     <img src={location.pathname === '/participants' ? participantsBlue : participants} alt='participants' />
                 </Link>

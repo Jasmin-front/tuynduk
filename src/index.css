@@ -5,6 +5,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
 ul{
     list-style: none;
 }
@@ -14,8 +21,6 @@ a{
 
 .containerApp{
     display: flex;
-    margin: 0 auto;
-    width: 1439px;
 }
 .error-message{
     color: red;
