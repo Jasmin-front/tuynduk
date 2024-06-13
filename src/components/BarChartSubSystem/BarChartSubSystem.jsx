@@ -20,6 +20,7 @@ ChartJS.register(
     Tooltip,
     Legend
 );
+console.log('hello')
 
 const BarChartSubSystem = () => {
     const barChartData = {
