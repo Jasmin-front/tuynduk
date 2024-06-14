@@ -104,7 +104,7 @@ const Main = () => {
                 <div className="card-main">
                     <h2 className='card_main_title'>Информационная система “Каталог”</h2>
                     <div className="card_container">
-                        <Link to={'/participants'} className="card" id='one'>
+                        <Link to={'/participants/'} className="card" id='one'>
                             <div className='card_info'>
                                 <h2 className='card_number'>{countOne}</h2>
                                 <p className='card_text'>Участники</p>
@@ -158,7 +158,8 @@ const Main = () => {
                             {
                                 addService?(
                                     addService.map((item, index) => (
-                                        <div className='name' key={index}><span>{item.name}</span>
+                                        <div className='name' key={index}>
+                                            <Link to={`/services/${item.id}`}>{item.name}</Link>
                                         </div>
                                     ))):(
                                         <span>loading...</span>

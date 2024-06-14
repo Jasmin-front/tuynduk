@@ -3,6 +3,10 @@
     padding: 40px 0 0 128px;
 ;
 }
+a{
+    color:#1560BD;
+
+}
 .card-main{
     display: flex;
     flex-direction: column;

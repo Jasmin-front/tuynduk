@@ -1,7 +1,7 @@
 import React from 'react';
 import Chart from "../../components/Chart/Chart.jsx";
 import StateChart from "../../components/StateChart/StateChart.jsx";
-import PieChart from "../../components/PieСhart/PieСhart.jsx";
+import PieChart from "../../components/PieChart/Pie-Chart.jsx";
 import { useSpring, animated } from '@react-spring/web';
 import BarChart from "../../components/BarChart/BarChart.jsx";
 import './Monitoring.css'

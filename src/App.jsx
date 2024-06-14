@@ -11,6 +11,7 @@ import Login from "./components/Login/Login.jsx";
 import Registration from "./components/Registion/Registrion.jsx";
 import Sidebar from "./components/sidebar/Sidebar.jsx";
 import NewParticipants from "./pages/NewParticipants/NewParticipants.jsx";
+import ServiceInfo from "./pages/serviceInfo/ServiceInfo.jsx";
 
 function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(localStorage.getItem('login') ?? false);
@@ -41,6 +42,7 @@ console.log(isAuthenticated)
                             <Route path='/participants' element={<NewParticipants />} />
                             <Route path='/subsystems' element={<SubsystemsPage />} />
                             <Route path='/services' element={<ServicesPage />} />
+                            <Route path='services/:postId' element={<ServiceInfo/>}/>
                             <Route path='/security_servers' element={<SecurityServersPage />} />
                             <Route path='/monitoring' element={<Monitoring />} />
                         </Route>

@@ -1,0 +1,66 @@
+@import "../../font/manrope/stylesheet.css";
+.service_infoTitle{
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40.98px;
+
+}
+.serviceInfo{
+    padding: 40px 0 0 128px;
+    font-family: 'Manrope' , sans-serif;
+
+
+}
+.serviceInfoTable h3{
+    margin-top: 30px;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 30.05px;
+    color:#041326;
+}
+.serviceInfoTable td, th{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24.59px;
+    color: #041326CC;
+    padding: 30px 32px 15px 24px;
+    text-align: left;
+    border-bottom: 1px solid #F2F2F2;
+}
+
+.serviceInfoTable th{
+    width: 200px;
+}
+.table{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: -1px 2px 20px 3px #4479BA0D;
+    margin-top: 21px;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+.table img{
+    position: absolute;
+    right: 0;
+}
+
+/*.serviceInfoBlock{*/
+/*    display: flex;*/
+/*}*/
+/*.serviceInfoBlock div{*/
+/*    font-size: 18px;*/
+/*    font-weight: 600;*/
+/*    line-height: 24.59px;*/
+/*    color: #041326CC;*/
+/*    padding: 30px 0 15px 24px;*/
+/*}*/
+/*.tableBlock{*/
+/*    background: #FFFFFF;*/
+/*    border-radius: 12px;*/
+/*    box-shadow: -1px 2px 20px 3px #4479BA0D;*/
+
+/*}*/
