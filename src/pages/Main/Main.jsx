@@ -171,8 +171,8 @@ const Main = () => {
                             {
                                 addService?(
                                     addService.map((item, index) => (
-                                        <div className='subsystems' key={index}><span>{item.subsystems}</span>
-                                        </div>
+                                        <Link to={`/subsystems/${item.id}`} className='subsystems' key={index}><span>{item.subsystems}</span>
+                                        </Link>
                                     ))):(
                                     <span>loading...</span>
                                 )
@@ -200,8 +200,8 @@ const Main = () => {
                             {
                                 addService ? (
                                     addService.map((item, index) => (
-                                        <div className='name' key={index}><span>{item.name}</span>
-                                        </div>
+                                        <Link to={`/services/${item.id}`} className='name' key={index}><span>{item.name}</span>
+                                        </Link>
                                     ))) : (
                                     <span>loading...</span>
                                 )
@@ -212,8 +212,8 @@ const Main = () => {
                             {
                                 addService ? (
                                     addService.map((item, index) => (
-                                        <div className='subsystems' key={index}><span>{item.subsystems}</span>
-                                        </div>
+                                        <Link to={`/subsystems/${item.id}`} className='subsystems' key={index}><span>{item.subsystems}</span>
+                                        </Link>
                                     ))) : (
                                     <span>loading...</span>
                                 )
