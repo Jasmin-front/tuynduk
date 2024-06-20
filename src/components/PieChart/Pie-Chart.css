@@ -8,7 +8,11 @@
     box-shadow: #959da533 0 8px 24px;
     height: 572px;
     margin-top: 20px;
+    @media (min-width: 1600px) {
+        width: 750px;
+    }
 }
+
 
 .buttons-container {
     display: flex;

@@ -1,9 +1,19 @@
 @import './font/manrope/stylesheet.css';
-
+#root{
+    width: 100%;
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+/*.appBlock{*/
+/*    width: 100%;*/
+/*}*/
+@media screen and (min-width: 1400px){
+    .appBlock{
+        width: 100%;
+    }
 }
 body{
     width: 100%;
@@ -21,6 +31,7 @@ a{
 
 .containerApp{
     display: flex;
+    width: 100%;
 }
 .error-message{
     color: red;

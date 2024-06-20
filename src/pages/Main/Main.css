@@ -17,7 +17,8 @@ a{
 .card_container{
     margin-top: 30px;
     display: flex;
-    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 .card{
     width: 299px;
@@ -148,6 +149,7 @@ a{
     padding: 30px 24px;
     display: flex;
     box-shadow: -1px 2px 20px 3px rgba(68, 121, 186, 0.05);
+    justify-content: center;
 }
 .service_info_title{
     background: rgba(230, 243, 255, 1);
@@ -182,7 +184,9 @@ a{
     line-height: 21.86px;
     text-align: left;
 
-
+    @media (min-width: 1634px) {
+        width: 600px;
+    }
 }
 .subsystems{
     width: 372px;
@@ -196,6 +200,9 @@ a{
     font-weight: 500;
     line-height: 21.86px;
     text-align: left;
+    @media (min-width: 1634px) {
+        width: 500px;
+    }
 }
 .registrion{
     display: flex;
@@ -211,6 +218,9 @@ a{
     line-height: 21.86px;
     text-align: left;
     color: rgba(54, 66, 81, 1);
+    @media (min-width: 1634px) {
+        width: 400px;
+    }
 }
 .update_service{
     margin-top: 40px;

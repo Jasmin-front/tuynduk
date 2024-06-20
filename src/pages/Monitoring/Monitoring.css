@@ -43,6 +43,7 @@
 }
 .monitoring-combo-chart{
     display: flex;
+    justify-content: center;
 }
 .monitoring-pie-chart{
 

@@ -33,26 +33,28 @@ console.log(isAuthenticated)
     return (
         <div className='containerApp'>
             {isAuthenticated && <Sidebar isOpen={isSidebarOpen} onLogout={handleLogout} />}
-            <Routes>
-                <Route path='/login' element={<Login setIsAuthenticated={setIsAuthenticated} />} />
-                <Route path='/registration' element={<Registration setIsAuthenticated={setIsAuthenticated} />} />
-                {isAuthenticated ? (
-                    <>
-                        <Route path='/' element={<Layout />}>
-                            <Route index element={<Main/>} />
-                            <Route path='/participants' element={<NewParticipants />} />
-                            <Route path='/subsystems' element={<SubsystemsPage />} />
-                            <Route path='subsystems/:postId' element={<SubsystemsInfo/>}/>
-                            <Route path='/services' element={<ServicesPage />} />
-                            <Route path='services/:postId' element={<ServiceInfo/>}/>
-                            <Route path='/security_servers' element={<SecurityServersPage />} />
-                            <Route path='/monitoring' element={<Monitoring />} />
-                        </Route>
-                    </>
-                ) : (
-                   <Route path={'*'} element={ <Navigate to={'/login'}/>}/>
-                )}
-            </Routes>
+            <div className='appBlock'>
+                <Routes>
+                    <Route path='/login' element={<Login setIsAuthenticated={setIsAuthenticated} />} />
+                    <Route path='/registration' element={<Registration setIsAuthenticated={setIsAuthenticated} />} />
+                    {isAuthenticated ? (
+                        <>
+                            <Route path='/' element={<Layout/>}>
+                                <Route index element={<Main/>} />
+                                <Route path='/participants' element={<NewParticipants />} />
+                                <Route path='/subsystems' element={<SubsystemsPage />} />
+                                <Route path='subsystems/:postId' element={<SubsystemsInfo/>}/>
+                                <Route path='/services' element={<ServicesPage />} />
+                                <Route path='services/:postId' element={<ServiceInfo/>}/>
+                                <Route path='/security_servers' element={<SecurityServersPage />} />
+                                <Route path='/monitoring' element={<Monitoring />} />
+                            </Route>
+                        </>
+                    ) : (
+                        <Route path={'*'} element={ <Navigate to={'/login'}/>}/>
+                    )}
+                </Routes>
+            </div>
         </div>
     );
 }
