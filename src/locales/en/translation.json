@@ -1,0 +1,21 @@
+{
+  "login": "Login",
+  "password": "Password",
+  "enter": "Enter",
+  "registration": "Registration",
+  "mandatoryField": "*Mandatory field",
+  "dataIncorrect": "Data is incorrect",
+  "faq": "Frequently Asked Questions",
+  "whatIsOEP": "What is OEP?",
+  "oepDescription": "Cloud-based electronic signature (OEP) is an electronic analog of a handwritten signature, containing necessary data about its owner...",
+  "whereToGetOEP": "Where and how to get OEP?",
+  "oepLocations": "You can get OEP at: Population Service Centers (CNS), Business Service Centers (COP), Civil and Digital Education Centers (CGSO), Local Territorial Administrations (LTA), Embassies and Consulates of the Kyrgyz Republic located in other countries...",
+  "whatIsPEP": "What is PEP?",
+  "pepDescription": "Simple electronic signature (PEP) is an electronic signature where the signature key matches the electronic signature itself (codes, passwords, and other identifiers)...",
+  "whatIsESI": "What is ESI?",
+  "esiDescription": "Unified identification system (ESI) is an automated system that aggregates identification and authorization methods provided for by the legislation of the Kyrgyz Republic...",
+  "username": "Username",
+  "register": "Register",
+  "requiredField": "*Required field",
+  "minLength": "*At least {{count}} characters"
+}

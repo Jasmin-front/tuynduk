@@ -1,8 +1,8 @@
-.new_participants_main {
+.security_servers_container {
     padding: 40px 0 0 128px;
 }
 
-.new_participants_container_date {
+.security_servers_container_date {
     margin-top: 20px;
     display: flex;
     gap: 5px;
@@ -13,18 +13,18 @@
     width: 1220px;
 }
 
-.participant_info_numbering_main {
+.service_шnfon_umbering_main {
     display: flex;
     flex-direction: column;
     gap: 3px;
 }
 
-.participant_info_numbering,
-.participant_info_code,
-.participant_info_name,
-.participant_info_class,
-.participant_info_code,
-.participant_info_registration_date {
+.service_шnfon_umbering,
+.service_шnfon_server_code,
+.service_шnfon_name,
+.service_шnfon_name_participant_class,
+.service_шnfon_name_participant_code,
+.service_шnfon_name_registration_date {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,40 +38,40 @@
     margin-bottom: 10px;
 }
 
-.participant_info_numbering {
+.service_шnfon_umbering {
     width: 48px;
     height: 74px;
 }
 
-.participant_info_code {
+.service_шnfon_server_code {
     width: 194px;
     height: 74px;
 }
 
-.participant_info_name {
-    width: 702px;
+.service_шnfon_name {
+    width: 520px;
     height: 74px;
 }
 
-.participant_info_class {
+.service_шnfon_name_participant_class {
     width: 132px;
     height: 74px;
     text-align: center;
 }
 
-.participant_info_code {
+.service_шnfon_name_participant_code {
     width: 115px;
     height: 74px;
     text-align: center;
 }
 
-.participant_info_registration_date {
+.service_шnfon_name_registration_date {
     width: 138px;
     height: 74px;
     text-align: center;
 }
 
-.new_participants_date_participant {
+.security_servers_date_server {
     height: 44px;
     display: flex;
     align-items: center;
@@ -82,25 +82,14 @@
     font-weight: 400;
 }
 
-#new_participants_date_participant {
+#security_servers_date_server {
     border: none;
 }
-
-.new_participants_date_participant_text {
+.security_servers_date_server_text{
     width: 46px;
     height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-}
-#new_participants_date_participant_text{
-     position: relative;
-}
-
-#new_participants_date_participant_text span{
-    display: inline-block;
-    left: 0;
-    position: absolute;
-    width: 650px;
 }

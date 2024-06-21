@@ -8,15 +8,15 @@ const Header = () => {
         <header className={style.headerBlock}>
             <ul className={style.headerLeft}>
                 <li className='header_text'>
-                    <Link to={'/participants'} className={ location.pathname=== '/participants' ? style.headerTextActive : style.headerText } >Участники</Link>
+                    <Link to={'/participants'} className={ location.pathname.includes('participants')? style.headerTextActive : style.headerText } >Участники</Link>
                     <div className={style.block}></div>
                 </li>
                 <li className='header_text'>
-                    <Link to={'/subsystems'} className={location.pathname==='/subsystems'  ? style.headerTextActive : style.headerText } >Подсистемы</Link>
+                    <Link to={'/Subsystems'} className={location.pathname==='/Subsystems'  ? style.headerTextActive : style.headerText } >Подсистемы</Link>
                     <div className={style.block}></div>
                 </li >
                 <li className='header_text'>
-                    <Link to={'/services'} className={location.pathname=== '/services' ? style.headerTextActive : style.headerText }>Сервисы</Link>
+                    <Link to={'/services'} className={location.pathname.includes('services')? style.headerTextActive : style.headerText }>Сервисы</Link>
                     <div className={style.block}></div>
                 </li>
                 <li className='header_text'>
@@ -24,7 +24,7 @@ const Header = () => {
                     <div className={style.block}></div>
                 </li>
                 <li className='header_text'>
-                    <Link to={'/Monitoring'} className={location.pathname=== '/Monitoring' ? style.headerTextActive : style.headerText }>Мониторинг</Link>
+                    <Link to={'/monitoring'} className={location.pathname=== '/monitoring' ? style.headerTextActive : style.headerText }>Мониторинг</Link>
                     <div className={style.block}></div>
                 </li>
             </ul>

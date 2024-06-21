@@ -115,7 +115,7 @@ const Main = () => {
                                 <img src={bigOne} alt=""/>
                             </div>
                         </Link>
-                        <Link to={'/subsystems'} className="card" id='two'>
+                        <Link to={'/Subsystems'} className="card" id='two'>
                             <div className='card_info'>
                                 <h2 className='card_number'>{countTwo}</h2>
                                 <p className='card_text'>Cистемы</p>

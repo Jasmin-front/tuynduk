@@ -1,7 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler } from 'chart.js';
-import './StateChart.css'
+import './StateChart.css';
+
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler);
 
 const StateChart = () => {
@@ -11,7 +12,7 @@ const StateChart = () => {
     useEffect(() => {
         return () => {
             if (chartRef.current) {
-                chartRef.current.chartInstance.destroy();
+                chartRef.current.destroy();
             }
         };
     }, []);
@@ -45,16 +46,10 @@ const StateChart = () => {
                         label += context.raw.toLocaleString();
                         return label;
                     },
-                    title: (context) => {
-                        return context[0].label; // Show the full date on hover
-                    }
+                    title: (context) => context[0].label
                 },
-                bodyFont: {
-                    size: 16 // Make tooltip numbers bigger
-                },
-                footerFont: {
-                    size: 16 // Make tooltip footer bigger
-                },
+                bodyFont: { size: 16 },
+                footerFont: { size: 16 },
             },
             legend: {
                 display: true,
@@ -64,27 +59,20 @@ const StateChart = () => {
         scales: {
             x: {
                 type: 'category',
-                grid: {
-                    display: false, // Hide vertical grid lines
-                },
+                grid: { display: false },
                 ticks: {
                     callback: function(value, index) {
-                        // Show every 2nd day label
                         return index % 2 === 0 ? this.getLabelForValue(value) : '';
                     },
-                    font: {
-                        size: 14 // Default font size for day labels
-                    },
+                    font: { size: 14 }
                 }
             },
             y: {
                 beginAtZero: true,
-                grid: {
-                    display: true // Show horizontal grid lines
-                },
+                grid: { display: true },
                 ticks: {
                     callback: function(value) {
-                        return value.toLocaleString(); // Format y-axis values with commas
+                        return value.toLocaleString();
                     }
                 }
             }
@@ -109,7 +97,7 @@ const StateChart = () => {
             mode: 'index',
             intersect: false,
             onHover: (event, activeElements) => {
-                const chart = chartRef.current.chartInstance;
+                const chart = chartRef.current;
                 if (activeElements.length > 0) {
                     setCursorX(event.offsetX);
                     chart.tooltip.setActiveElements(activeElements, { x: event.offsetX, y: event.offsetY });
@@ -126,23 +114,17 @@ const StateChart = () => {
     return (
         <div className='state_chart_container'>
             <h2 className='state_chart_container_title'>Количество запросов за последний месяц, сгруппированных по дням.</h2>
-            <Line
-                ref={chartRef}
-                data={data}
-                options={options}
-                width={160}
-                height={60}
-            />
+            <Line ref={chartRef} data={data} options={options} width={160} height={60} />
             {cursorX !== null && (
                 <div
                     style={{
                         position: 'absolute',
                         left: cursorX,
-                        top: '50px', // Adjust the top position as needed
+                        top: '50px',
                         width: '1px',
-                        height: 'calc(100% - 50px)', // Adjust the height as needed
+                        height: 'calc(100% - 50px)',
                         backgroundColor: 'blue',
-                        pointerEvents: 'none' // Ensure the line doesn't interfere with chart interaction
+                        pointerEvents: 'none'
                     }}
                 />
             )}

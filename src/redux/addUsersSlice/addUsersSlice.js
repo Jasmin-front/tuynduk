@@ -11,7 +11,7 @@ export const addUsersAsyncData = createAsyncThunk(
     'users/addUsersAsyncData',
     async (userData, { rejectWithValue }) => {
         try {
-            const response = await axios.post('https://656db53ebcc5618d3c23cb54.mockapi.io/todo/something/registroin', userData);
+            const response = await axios.post('http://127.0.0.1:8000/api/users/signup/', userData);
             return response.data;
         } catch (error) {
             return rejectWithValue(error.response.data);

@@ -1,21 +1,24 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { I18nextProvider } from 'react-i18next';
+import App from './App.jsx';
+import store from './redux/store/store.js';
+import i18n from './i18n';
+import './index.css';
 
-import {BrowserRouter} from "react-router-dom";
-import {Provider} from "react-redux";
-import store from "./redux/store/store.js";
+const container = document.getElementById('root');
+const root = createRoot(container);
 
-
-import App from './App.jsx'
-import './index.css'
-
-
-ReactDOM.createRoot(document.getElementById('root')).render(
+root.render(
     <BrowserRouter>
         <React.StrictMode>
             <Provider store={store}>
+                <I18nextProvider i18n={i18n}>
                     <App />
+                </I18nextProvider>
             </Provider>
         </React.StrictMode>
     </BrowserRouter>
-)
+);

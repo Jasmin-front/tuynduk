@@ -1,13 +1,23 @@
+.registrationPage_main {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
 
-.registrationPage{
+.registrationPage {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
     width: 100%;
+    max-width: 50%;
+    padding-left: 200px;
+    padding-right: 0;
+    box-sizing: border-box;
 }
-.registrationPage h2{
+
+.registrationPage h2 {
     margin-bottom: 20px;
     font-family: 'Manrope', sans-serif;
     font-size: 30px;
@@ -16,18 +26,140 @@
     color: #041326;
     text-align: center;
 }
-.registrationPage input{
+
+.registrationPage input {
     display: block;
-    width: 312px;
+    width: 100%;
     height: 42px;
-    padding-left: 20px;
+    padding-left: 40px;
     border-radius: 8px;
     margin-bottom: 10px;
 }
-.registrationPage button{
-    width: 312px;
+
+.registration_btn {
+    width: 100%;
     height: 42px;
     color: white;
-    background:#1560BD;
+    background: #1560BD;
     border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s ease;
+}
+
+.registration_btn:hover {
+    background: #729fe7;
+}
+
+.registration_container_images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.registration_tynduk_images {
+    max-width: 200px;
+}
+
+.registration_container {
+    box-shadow: #959da533 0 8px 24px;
+    height: auto;
+    width: 80%;
+    max-width: 342px;
+    border-radius: 20px;
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.registration_exit {
+    margin-left: 0;
+    text-align: center;
+}
+
+.registration_form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.registration_form_block {
+    position: relative;
+}
+
+.registration_input_images {
+    position: absolute;
+    width: 25px;
+    top: 7px;
+    left: 7px;
+}
+
+.registration_social {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.registration_img_social {
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.registration_img_social:hover {
+    transform: scale(1.4);
+}
+
+.registration_language_container_btns {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.registration_language_btns {
+    width: 50px;
+    height: 40px;
+    border: none;
+    font-family: sans-serif;
+    background: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    color: #72708D;
+    transition: 0.3s;
+}
+
+.registration_language_btns:hover {
+    color: #1560BD;
+}
+
+.registration_language_btns.selected  {
+    background: #D9E5F5;
+    color: #1560BD;
+    border-radius: 13px;
+}
+
+@media (max-width: 768px) {
+    .registrationPage_main {
+        flex-direction: column;
+    }
+
+    .registrationPage {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .registration_container {
+        width: 100%;
+    }
 }

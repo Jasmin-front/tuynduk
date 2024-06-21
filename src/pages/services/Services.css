@@ -1,0 +1,117 @@
+.service_container{
+    padding: 40px 0 0 128px;
+}
+
+.service_container_main{
+    margin-top: 20px;
+    display: inline-flex;
+    margin-bottom: 2px;
+    gap: 4px;
+    box-shadow: #0000001a 0 4px 12px;
+    padding: 30px 24px;
+    align-items: center;
+}
+
+.service_index,
+.service_service,
+.service_subsystems,
+.service_class,
+.service_code,
+.service_subsystem_code,
+.service_registration_date,
+.service_status {
+    height: 74px;
+    background-color: #e6f3ff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    font-size: 16px;
+    font-family: Manrope, sans-serif;
+    color: black;
+    font-weight: bold;
+    flex-direction: column;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.service_card{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.service_index {
+    width: 48px;
+}
+
+.service_service {
+    width: 223px;
+}
+#service_card_service{
+    width: 223px;
+}
+
+
+.service_subsystems {
+    width: 178px;
+}
+#service_card_subsystems{
+    width: 178px;
+
+}
+
+.service_class {
+    width: 98px;
+}
+
+.service_code {
+    width: 106px;
+}
+
+.service_subsystem_code {
+    width: 227px;
+}
+
+.service_registration_date {
+}
+#service_detail_info{
+    width: 168px;
+    text-align: center;
+}
+
+
+.service_status {
+    width: 98px;
+
+}
+
+.service_detail{
+    flex-grow: 1;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #f0f0f0;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+.green{
+    background-color: #D9FFE6;
+    color: #27B858;
+    height: 36px;
+    padding: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.red{
+    padding: 7px;
+    background-color: #FF0000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+
+}

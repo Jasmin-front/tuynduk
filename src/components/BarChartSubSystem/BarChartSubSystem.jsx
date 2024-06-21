@@ -1,108 +1,46 @@
 import React from 'react';
-import { Bar } from 'react-chartjs-2';
-import {
-    Chart as ChartJS,
-    BarElement,
-    CategoryScale,
-    LinearScale,
-    Title,
-    Tooltip,
-    Legend
-} from 'chart.js';
-import './BarChartSubSystem.css'; // Ensure the CSS file is imported
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import './BarChartSubSystem.css';
 
-// Register Chart.js components
-ChartJS.register(
-    BarElement,
-    CategoryScale,
-    LinearScale,
-    Title,
-    Tooltip,
-    Legend
-);
-console.log('hello')
+const data = [
+    { год: 2018, количество: 62 },
+    { год: 2019, количество: 262 },
+    { год: 2020, количество: 261 },
+    { год: 2021, количество: 118 },
+    { год: 2022, количество: 144 },
+    { год: 2023, количество: 285 },
+    { год: 2024, количество: 135 }
+];
 
-const BarChartSubSystem = () => {
-    const barChartData = {
-        labels: ["2018", "2019", "2020", "2021", "2022", "2023", "2024"],
-        datasets: [
-            {
-                data: [180, 200, 150, 220, 170, 300, 245],
-                label: "Сервисы по годам",
-                borderColor: "rgba(75, 192, 192, 0.85)",
-                backgroundColor: "rgba(75, 192, 192, 0.85)",
-                borderRadius: {
-                    topLeft: 10,
-                    topRight: 10,
-                    bottomLeft: 0,
-                    bottomRight: 0
-                },
-                borderSkipped: false,
-                fill: true
-            }
-        ]
-    };
-
-    const options = {
-        indexAxis: 'y',
-        responsive: true,
-        plugins: {
-            title: {
-                display: true,
-                text: 'Сервисы по годам',
-                font: {
-                    size: 15
-                }
-            },
-            legend: {
-                display: true,
-                position: "top"
-            },
-            tooltip: {
-                enabled: true
-            }
-        },
-        scales: {
-            x: {
-                grid: {
-                    display: true,
-                    color: "rgba(161,150,150,0.85)"
-                },
-                ticks: {
-                    color: "rgba(161,150,150,0.85)"
-                }
-            },
-            y: {
-                grid: {
-                    display: false,
-                    color: "rgba(75, 192, 192, 0.85)"
-                },
-                ticks: {
-                    color: "rgba(75, 192, 192, 0.85)"
-                }
-            }
-        },
-        hover: {
-            mode: 'nearest',
-            intersect: true,
-            onHover: (event, chartElement) => {
-                if (chartElement.length) {
-                    event.native.target.style.cursor = 'pointer';
-                } else {
-                    event.native.target.style.cursor = 'default';
-                }
-            }
-        }
-    };
-
+const BarChartSubSystem = ({
+                               width = 600,
+                               height = 300,
+                               layout = "vertical",
+                               margin = { top: 20, right: 30, left: 20, bottom: 5 },
+                               barFillColor = "#0000FF",
+                               barRadius = [10, 10, 0, 0]
+                           }) => {
     return (
-        <div className='bar-chart-subsystem-container'>
-            <div className='bar-chart-subsystem-header'>
-                <h2 className='bar-chart-subsystem-title'>Сервисы по годам</h2>
-                <span className='bar-chart-subsystem-text'>Всего: 1265</span>
+        <div className="bar-chart-container">
+            <div className="bar-chart-header">
+                <h2 className="bar-chart-title">Сервисы по годам</h2>
+                <span className="bar-chart-text">Всего: 1266</span>
             </div>
-            <div className='bar-chart-subsystem-wrapper'>
-                <Bar data={barChartData} options={options} />
+            <div className="bar-chart-wrapper">
+                <BarChart
+                    width={width}
+                    height={height}
+                    data={data}
+                    layout={layout}
+                    margin={margin}
+                >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis type="number" />
+                    <YAxis type="category" dataKey="год" />
+                    <Tooltip />
+                    <Legend />
+                    <Bar dataKey="количество" fill={barFillColor} radius={barRadius} />
+                </BarChart>
             </div>
         </div>
     );

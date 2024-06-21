@@ -1,13 +1,12 @@
 import React from 'react';
 import Chart from "../../components/Chart/Chart.jsx";
 import StateChart from "../../components/StateChart/StateChart.jsx";
-import PieChart from "../../components/PieChart/Pie-Chart.jsx";
 import { useSpring, animated } from '@react-spring/web';
 import BarChart from "../../components/BarChart/BarChart.jsx";
 import './Monitoring.css'
-import BarChatTwo from "../../components/BarChatTwo/BarChatTwo.jsx";
 import BarChartServices from "../../components/BarChartServices/BarChartServices.jsx";
 import BarChartSubSystem from "../../components/BarChartSubSystem/BarChartSubSystem.jsx";
+import PieChart from "../../components/PieChart/Pie-Chart.jsx";
 
 const Monitoring = () => {
     const number = 2344033190;

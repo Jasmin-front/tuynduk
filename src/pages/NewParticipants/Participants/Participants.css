@@ -1,0 +1,95 @@
+.participants_container{
+    padding: 40px 0 0 128px;
+
+}
+.back_button{
+    background: none;
+    background: #1560bd;
+    padding: 5px 20px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+.participants_container_main{
+    display: flex;
+    margin-top: 20px;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+.participants_container_left{
+    width: 804px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: #959da533 0 8px 24px;
+    border-radius: 5px;
+    padding: 24px;
+    background-image: url("../../../assets/Paricpants/background.png");
+}
+.participants_container_right{
+    position: relative;
+    box-shadow: #959da533 0 8px 24px;
+    border-radius: 5px;
+    padding: 24px;
+    height: 100%;
+}
+.info_block{
+    display: flex;
+    font-family: Manrope, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    gap: 5px;
+
+    align-items: center;
+    line-height: 24px;
+    text-align: left;
+    margin-top: 30px;
+    border-bottom: 1px solid rgba(242, 242, 242, 1);
+    padding: 15px;
+}
+.info_block_title{
+    width: 189px;
+    font-family: Manrope;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24.59px;
+    text-align: left;
+
+}
+.info_block_text{
+    width: 794px;
+    padding-left: 40px;
+    font-family: Manrope;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24.59px;
+    text-align: left;
+    margin-left: 40px;
+}
+
+#info_block_text_id{
+    width: 46px;
+    height: 32px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+
+}
+#info_value_text_value{
+    margin-right: 40px;
+}
+.contact_info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 56px;
+}
+.contact_container{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap:16px ;
+}

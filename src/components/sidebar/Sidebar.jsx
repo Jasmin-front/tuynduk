@@ -23,13 +23,13 @@ const Sidebar = () => {
                 </Link>
             </div>
             <div className={style.imagesSidebarBottom}>
-                <Link to={'/participantse'} className={location.pathname === '/participants' ? style.activeLink : style.notActiveLink}>
+                <Link to={'/participants'} className={location.pathname === '/participants' ? style.activeLink : style.notActiveLink}>
                     <div className={style.block}></div>
                     <img src={location.pathname === '/participants' ? participantsBlue : participants} alt='participants' />
                 </Link>
-                <Link to={'/subsystems'} className={location.pathname === '/subsystems' ? style.activeLink : style.notActiveLink}>
+                <Link to={'/Subsystems'} className={location.pathname === '/Subsystems' ? style.activeLink : style.notActiveLink}>
                     <div className={style.block}></div>
-                    <img src={location.pathname === '/subsystems' ? subsystemsBlue : subsystems} alt='subsystems' />
+                    <img src={location.pathname === '/Subsystems' ? subsystemsBlue : subsystems} alt='subsystems' />
                 </Link>
                 <Link to={'/services'} className={location.pathname === '/services' ? style.activeLink : style.notActiveLink}>
                     <div className={style.block}></div>
@@ -39,9 +39,9 @@ const Sidebar = () => {
                     <div className={style.block}></div>
                     <img src={location.pathname === '/security_servers' ? security_serversBlue : security_servers} alt="security_servers" />
                 </Link>
-                <Link to={'/Monitoring'} className={location.pathname === '/Monitoring' ? style.activeLink : style.notActiveLink}>
+                <Link to={'/monitoring'} className={location.pathname === '/monitoring' ? style.activeLink : style.notActiveLink}>
                     <div className={style.block}></div>
-                    <img src={location.pathname === '/Monitoring' ? monitoringBlue : monitoring} alt="monitoring" />
+                    <img src={location.pathname === '/monitoring' ? monitoringBlue : monitoring} alt="monitoring" />
                 </Link>
             </div>
         </div>
